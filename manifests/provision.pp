@@ -46,7 +46,7 @@ file {"/var/www":
 
 file { "/etc/apache2/sites-available/default":
   ensure => "link",
-  target => "/vagrant/devops/manifests/assets/vhost.conf",
+  target => "/vagrant/vm-pp/manifests/assets/vhost.conf",
   require => Package["apache2"],
   notify => Service["apache2"],
   replace => yes,
