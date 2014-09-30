@@ -9,7 +9,8 @@ package {"apache2":
 }
 
 service { "apache2":
-  ensure => "running",
+  ensure => running,
+  enable => true,
   require => Package["apache2"]
 }
 
@@ -20,6 +21,7 @@ package {['mysql-server', 'mysql-client']:
 
 service { 'mysql':
   ensure  => running,
+  enable => true,
   require => Package['mysql-server'],
 }
 
@@ -47,6 +49,15 @@ file {"/var/www":
 file { "/etc/apache2/sites-available/default":
   ensure => "link",
   target => "/vagrant/vm-pp/manifests/assets/vhost.conf",
+  require => Package["apache2"],
+  notify => Service["apache2"],
+  replace => yes,
+  force => true,
+}
+
+file { "/etc/php5/conf.d/xdebug.ini":
+  ensure => "link",
+  target => "/vagrant/vm-pp/manifests/assets/xdebug.ini",
   require => Package["apache2"],
   notify => Service["apache2"],
   replace => yes,
