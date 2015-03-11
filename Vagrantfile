@@ -3,7 +3,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	
-	config.vm.box = "precise64" || "hashicorp/precise64"
+	config.vm.box = "puppetlabs/ubuntu-12.04-64-puppet"
 	config.vm.network "forwarded_port", guest: 80, host: 8080
 	config.vm.synced_folder "../", "/vagrant", :nfs => true, :nfs => { :mount_options => ["dmode=777","fmode=777"] }
 	config.vm.network :private_network, ip: "192.168.58.100"
