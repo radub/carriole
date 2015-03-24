@@ -25,7 +25,7 @@ service { 'mysql':
   require => Package['mysql-server'],
 }
 
-package { ["php5-common", "libapache2-mod-php5", "php5-cli", "php-apc", "php5-mysql", "php5-xdebug"]:
+package { ["php5-common", "libapache2-mod-php5", "php5-cli", "php-apc", "php5-mysql", "php5-xdebug", "php5-mcrypt", "php5-curl", "php5-gd"]:
   ensure => installed,
   notify => Service["apache2"],
   require => [Exec["apt-get update"], Package['mysql-client'], Package['apache2']],
@@ -84,3 +84,16 @@ exec { "apache_lockfile_permissions" :
   notify  => Service["apache2"],
 }
 
+package { 'git-core':
+  ensure => 'present',
+}
+
+package { "curl":
+  ensure => installed,
+}
+
+exec { 'composer_install':
+  command => 'curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer',
+  path    => '/usr/bin:/usr/sbin',
+  require => Package['curl'],
+}
