@@ -19,22 +19,22 @@ class apache {
     recurse => true,
     purge => true,
     force => true,
-    before => File["/etc/apache2/sites-enabled/web"],
+    before => File["/etc/apache2/sites-enabled/web.conf"],
     require => Package["apache2"],
   }
 
   # create apache config from main vagrant manifests
-  file { "/etc/apache2/sites-available/web":
+  file { "/etc/apache2/sites-available/web.conf":
     ensure => present,
-    source => "/vagrant/manifests/assets/vhost.conf",
+    source => "/vagrant/vm-pp/manifests/assets/vhost.conf",
     require => Package["apache2"],
   }
 
   # symlink apache site to the site-enabled directory
-  file { "/etc/apache2/sites-enabled/web":
+  file { "/etc/apache2/sites-enabled/web.conf":
     ensure => link,
-    target => "/etc/apache2/sites-available/web",
-    require => File["/etc/apache2/sites-available/web"],
+    target => "/etc/apache2/sites-available/web.conf",
+    require => File["/etc/apache2/sites-available/web.conf"],
     notify => Service["apache2"],
   }
 
@@ -44,7 +44,7 @@ class apache {
     require => Package["apache2"],
     subscribe => [
       File["/etc/apache2/mods-enabled/rewrite.load"],
-      File["/etc/apache2/sites-available/web"]
+      File["/etc/apache2/sites-available/web.conf"]
     ],
   }
 
