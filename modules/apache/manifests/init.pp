@@ -48,7 +48,7 @@ class apache {
     ],
   }
 
-  file {"/var/www/html":
+  file {"/var/www/web":
     ensure => "link",
     target => "/vagrant/app",
     require => Package["apache2"],
