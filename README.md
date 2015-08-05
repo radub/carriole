@@ -1,6 +1,6 @@
 vm-pp
 =====
-A bare bones LAMP VM spinup. 
+A bare bones LAMP VM spinup. It uses Vagrant, VirtualBox and Puppet.
 
 
 ## Step-by-step guide
