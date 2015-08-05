@@ -79,4 +79,6 @@ c:\Windows\System32\Drivers\etc\hosts
 
 ## 7. You're done! (smile)
 To test everything works, create an index.html file inside the app directory, then try to access it in you browser using: 
-```http://{projet-name}.local```
+```
+http://{projet-name}.local
+```
