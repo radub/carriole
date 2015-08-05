@@ -1,5 +1,7 @@
 vm-pp
 =====
+A bare bones LAMP VM spinup. 
+
 
 ## Step-by-step guide
 
