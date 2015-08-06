@@ -2,6 +2,9 @@ vm-pp
 =====
 A bare bones LAMP VM spinup. It uses Vagrant, VirtualBox and Puppet.
 
+Vagrant: 1.7.2
+VirtualBox: 4.3.30
+Puppet: 3.6
 
 ## Step-by-step guide
 
