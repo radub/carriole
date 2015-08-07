@@ -52,6 +52,7 @@ end
 ## 3. Create the app directory
 ```
 # at the same level with vm-pp directory create another dir named app
+$ cd ..
 $ mkdir app
 ```
 
