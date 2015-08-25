@@ -1,9 +1,9 @@
 vm-pp
 =====
 
-[![Build Status](https://travis-ci.org/radub/vm-pp-multi.svg?branch=master)][travis]
+[![Build Status](https://travis-ci.org/radub/vm-pp.svg?branch=master)][travis]
 
-[travis]: http://travis-ci.org/radub/vm-pp-multi
+[travis]: http://travis-ci.org/radub/vm-pp
 
 A bare bones LAMP VM spinup. It uses Vagrant, VirtualBox and Puppet.
 
