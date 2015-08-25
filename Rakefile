@@ -1,5 +1,3 @@
-require "rake/testtask"
-
-Rake::TestTask.new do |task|
-  puts "Pass for now!";
-end
+require 'rspec/core/rake_task'
+task :default => :spec
+RSpec::Core::RakeTask.new
