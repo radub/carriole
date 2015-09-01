@@ -1,4 +1,4 @@
-vm-pp
+Carriole
 =====
 
 [![Build Status](https://travis-ci.org/radub/carriole.svg?branch=master)][travis]
